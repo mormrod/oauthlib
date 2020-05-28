@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 oauthlib.oauth2.rfc6749
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -8,10 +9,11 @@ for consuming and providing OAuth 2.0 RFC6749.
 import functools
 import logging
 
-from ..errors import (
-    FatalClientError, InvalidClientError, InvalidRequestError, OAuth2Error,
-    ServerError, TemporarilyUnavailableError, UnsupportedTokenTypeError,
-)
+from ..errors import (FatalClientError, OAuth2Error, ServerError,
+                      TemporarilyUnavailableError, InvalidRequestError,
+                      InvalidClientError, UnsupportedTokenTypeError)
+
+from oauthlib.common import CaseInsensitiveDict, urldecode
 
 log = logging.getLogger(__name__)
 
@@ -82,11 +84,14 @@ class BaseEndpoint:
     def _raise_on_bad_post_request(self, request):
         """Raise if invalid POST request received
         """
-        if request.http_method.upper() == 'POST':
-            query_params = request.uri_query or ""
-            if query_params:
-                raise InvalidRequestError(request=request,
-                                          description=('URL query parameters are not allowed'))
+        #TODO: Added in October 2019 should be un commented or better still not used at all once apps using
+        # this end poin do auth properly.
+        pass
+        # if request.http_method.upper() == 'POST':
+        #     query_params = request.uri_query or ""
+        #     if query_params:
+        #         raise InvalidRequestError(request=request,
+        #                                   description=('URL query parameters are not allowed'))
 
 def catch_errors_and_unavailability(f):
     @functools.wraps(f)

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
     Implements signals based on blinker if available, otherwise
     falls silently back to a noop. Shamelessly stolen from flask.signals:

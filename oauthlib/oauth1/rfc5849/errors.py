@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 oauthlib.oauth1.rfc5849.errors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

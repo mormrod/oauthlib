@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 oauthlib.utils
 ~~~~~~~~~~~~~~
@@ -6,9 +7,10 @@ This module contains utility methods used by various parts of the OAuth 2 spec.
 """
 import datetime
 import os
-from urllib.parse import quote, urlparse
 
 from oauthlib.common import urldecode
+from urllib.parse import quote
+from urllib.parse import urlparse
 
 
 def list_to_scope(scope):

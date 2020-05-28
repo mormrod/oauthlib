@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 oauthlib.oauth2.rfc6749.endpoint.metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -10,12 +11,13 @@ import copy
 import json
 import logging
 
-from .. import grant_types
-from .authorization import AuthorizationEndpoint
 from .base import BaseEndpoint, catch_errors_and_unavailability
+from .authorization import AuthorizationEndpoint
 from .introspect import IntrospectEndpoint
-from .revocation import RevocationEndpoint
 from .token import TokenEndpoint
+from .revocation import RevocationEndpoint
+from .. import grant_types
+
 
 log = logging.getLogger(__name__)
 

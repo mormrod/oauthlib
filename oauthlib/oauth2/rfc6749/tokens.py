@@ -9,14 +9,15 @@ This module contains methods for adding two types of access tokens to requests.
 """
 import hashlib
 import hmac
-import warnings
 from binascii import b2a_base64
-from urllib.parse import urlparse
+import warnings
 
 from oauthlib import common
 from oauthlib.common import add_params_to_qs, add_params_to_uri
+from urllib.parse import urlparse
 
 from . import utils
+
 
 
 class OAuth2Token(dict):
